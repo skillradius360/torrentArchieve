@@ -1,0 +1,1 @@
+{"root":["./src/app.ts","./src/constansts.ts","./src/index.ts","./src/controllers/game.contoller.ts","./src/routes/game.routes.ts","./src/utils/asynchandler.ts"],"version":"5.8.2"}
