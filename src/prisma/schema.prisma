@@ -17,7 +17,7 @@ model games{
   title String 
   gameId Int @default(autoincrement()) @unique
   gameContent String 
-  gameCover String
+  gameCover String?
   gameLinks String[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
