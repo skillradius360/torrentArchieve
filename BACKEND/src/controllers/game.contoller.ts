@@ -60,7 +60,9 @@ const editAPost = asyncHandler(async(req,res)=>{
     const recievedData= req.body
     const schemaIdCheck = z.string()
     const schemaDataCheck= z.object({
-        title:z.string(),gameContent:z.string(),gameLinks:z.array(z.string())
+        title: z.string(),
+        gameContent: z.string(),
+        gameLinks: z.array(z.string())
     })
 
     const successStatus = schemaIdCheck.safeParse(postId)
