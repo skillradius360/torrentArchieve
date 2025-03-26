@@ -88,4 +88,24 @@ const editAPost = asyncHandler(async(req,res)=>{
 
     return res.status(200).json(new apiResponse(200,dbObject,"successfully updated Post basic Data"))
 })
-export {createPost,findSinglePost}
+
+const removePost = asyncHandler(async(req,res)=>{
+    const {postId}= req.params
+    if(!postId) throw new Error("no postId")
+    
+    const postStatus = await client.games.delete({
+        where:{
+            gameId:postId
+        }
+    })
+    if(!postStatus) throw new Error("deletion unsuccessful!")
+    
+        return res.status(200).json(new apiResponse(200,{},"target post Deleted!"))
+})
+
+
+const fetchPostBySearch = 
+export {createPost,findSinglePost
+    ,removePost,editAPost,
+    
+}
