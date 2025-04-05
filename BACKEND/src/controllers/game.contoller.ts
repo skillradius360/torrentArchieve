@@ -2,6 +2,7 @@ import { client } from "../index";
 import { asyncHandler } from "../utils/asyncHandler";
 import {number, z,ZodString} from "zod"
 import apiResponse from "../utils/apiResponse";
+import { response } from "express";
 
 
 const createPost = asyncHandler(async(req,res)=>{
@@ -100,4 +101,13 @@ const posts= await client.games.findMany({
 
 return res.status(200).json(new apiResponse(200,posts,"all posts fetched"))
 })
-export {createPost,findSinglePost,editAPost,findSomePosts}
+
+
+const findPicsWithLinks = asyncHandler(async(req,res)=>{
+    const response = await client.games.findMany({
+        take:20
+    })
+    
+    return res.status(200).json(new apiResponse(200,response,"pics fetched"))
+})
+export {createPost,findSinglePost,editAPost,findSomePosts,findPicsWithLinks}
