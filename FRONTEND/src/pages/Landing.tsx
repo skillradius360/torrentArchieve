@@ -10,7 +10,7 @@ function Landing() {
   interface inputData{
     image:string,
     id:string,
-    description:string,
+    gameContent:string,
     title:string
 }
   useEffect(()=>{
@@ -31,10 +31,12 @@ function Landing() {
 
   // if(loading) return (<Loading/>)
   return (
-    <div>
+    <div className='flex justify-center items-start
+    flex-col 
+    bg-[#212121]'>
     {res.map((data:inputData,index:number)=>(
-      <div key={index+Date.now()} className='h-10 ring-green-500 ring-4'>
-        <Tabbox image={data.image} description={data.description} title={data.title}/>
+      <div key={index+Date.now()} >
+        <Tabbox image={data.image} gameContent={data.gameContent} title={data.title}/>
       </div>
     ))}
     </div>
