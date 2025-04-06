@@ -32,7 +32,6 @@ export function Tabbox(props: Partial<inputData>) {
         />
         </div>
 
-        <aside className="h-[90vh] w-[20vw] border-red-500 border-4 border-solid"></aside>
 
 
       </div>

@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import axios from "axios"
 import { Tabbox } from '../components/TabBox/Tabbox'
+import Loader from './Loader'
 function Landing() {
 
 
@@ -23,13 +24,14 @@ function Landing() {
        setLoading(false)
      } catch (error) {
       return(
-        <p>Error loading Posts:- </p>
+        <Loader/>
       )
      }
     })()
   },[])
 
-  // if(loading) return (<Loading/>)
+  if(res.length<1) return <Loader/>
+
   return (
     <div className='flex justify-center items-start
     flex-col 
