@@ -38,7 +38,7 @@ function Landing() {
     bg-[#212121]'>
     {res.map((data:inputData,index:number)=>(
       <div key={index+Date.now()} >
-        <Tabbox image={data.image} gameContent={data.gameContent} title={data.title}/>
+        <Tabbox image={data.image} gameContent={data.gameContent} title={data.title}/> 
       </div>
     ))}
     </div>
